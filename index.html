@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浅影的发展历程</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .shell {
+            width: 100%;
+            position: relative;
+            padding: 80px 0;
+            transition: 0.3s ease 0s;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .shell::before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(99, 99, 99, 0.8);
+            content: "";
+        }
+
+        .header {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .title {
+            color: #fff;
+            font-size: 46px;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        .timeline {
+            display: flex;
+            margin: 0 auto;
+            flex-direction: column;
+            max-width: 700px;
+            position: relative;
+        }
+
+        .content-title {
+            font-weight: normal;
+            font-size: 66px;
+            margin: -10px 0 0 0;
+            transition: 0.4s;
+            padding: 0 10px;
+            box-sizing: border-box;
+            color: #fff;
+        }
+
+        .content-desc {
+            margin: 0;
+            font-size: 15px;
+            box-sizing: border-box;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 25px;
+        }
+
+        .timeline:before {
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            margin-left: -1px;
+            content: "";
+            background: rgba(255, 255, 255, 0.007);
+        }
+
+        .item {
+            padding: 40px 0;
+            opacity: 0.3;
+            filter: blur(2px);
+            transition: 0.5s;
+            box-sizing: border-box;
+            width: calc(50% - 40px);
+            display: flex;
+            position: relative;
+            transform: translatey(-80px);
+        }
+
+        .item:before {
+            content: attr(data-taxt);
+            letter-spacing: 3px;
+            width: 100%;
+            position: absolute;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 13px;
+            border-left: 2px solid rgba(255, 255, 255, 0.5);
+            top: 70%;
+            margin-top: -5px;
+            padding-left: 15px;
+            opacity: 0;
+            right: calc(-100% - 56px);
+            font: 900 20px '';
+            letter-spacing: 5px;
+        }
+
+        .item:nth-child(even) {
+            align-self: flex-end;
+        }
+
+        .item:nth-child(even):before {
+            right: auto;
+            text-align: right;
+            left: calc(-100% - 56px);
+            padding-left: 0;
+            border-left: none;
+            border-right: 2px solid rgba(255, 255, 255, 0.5);
+            padding-right: 15px;
+        }
+
+        .item--active {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0px);
+        }
+
+        .item--active:before {
+            top: 50%;
+            transition: 0.3s all 0.2s;
+            opacity: 1;
+        }
+
+        .item--active .content-title {
+            margin: -50px 0 20px 0;
+        }
+
+        img {
+            max-width: 100%;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4)
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 16px;
+            letter-spacing: 5px;
+            margin: 10px 0 0 0;
+            font-weight: normal;
+        }
+
+        .footer {
+            padding: 95px 0;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #999;
+            display: inline-block;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .item {
+                align-self: baseline !important;
+                width: 100%;
+                padding: 0 30px 150px 80px;
+            }
+
+            .item:before {
+                left: 10px !important;
+                padding: 0% !important;
+                top: 50px;
+                text-align: center !important;
+                width: 60px;
+                border: none !important;
+            }
+
+            .item:last-child {
+                padding-bottom: 40px;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .timeline:before {
+                left: 40px;
+            }
+        }
+
+        .dibu {
+            width: auto;
+            max-width: 600px;
+            height: auto;
+            background: rgb(133, 143, 210);
+            opacity: 100%;
+            margin: 0 auto;
+            transition: all 0.5s ease;
+            position: relative;
+            z-index: 10;
+            border-radius: 500px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .dizhi {
+            text-align: center;
+            line-height: 200px;
+        }
+
+        .dibu.highlight {
+            background: linear-gradient(135deg, rgb(133, 143, 210) 0%, rgb(173, 183, 240) 100%);
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
+            transform: translateY(0);
+            animation: pulse 2s infinite;
+            border-top: 3px solid rgba(255, 255, 255, 0.7);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+            }
+
+            100% {
+                box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
+            }
+        }
+    </style>
+    <style type="text/css">
+        .dizhi {
+            font-family: 楷体;
+            font-size: 35px;
+            color: black;
+            opacity: 100%;
+            margin: 0;
+        }
+
+        .content-desc {
+            font-family: 楷体;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="shell" id="shell">
+        <div class="header">
+            <h2 class="title">浅影的发展历程</h2>
+            <h3 class="subtitle">无功受禄，不劳而获，坐享其成，一步登天！</h3>
+        </div>
+        <div class="timeline">
+            <div class="item" data-taxt="《年少有为》">
+                <div class="content">
+                    <img src="/HTML/1.jpg" alt="" class="img">
+                    <h2 class="content-titlt">2018年9月13日</h2>
+                    <p class="content-desc">
+                        这一天你发布了第一条视频，恭喜浅浅子成为一位视频创作者。
+                        开始给小西瓜们带来优质的视频内容！这天的意义非凡！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《草木》">
+                <div class="content">
+                    <img src="/HTML/2.jpg" alt="" class="img">
+                    <h2 class="content-titlt">2018年12月05日</h2>
+                    <p class="content-desc">
+                        这天你翻唱了《草木》，收获了22.5万赞！可喜可贺！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《撒野》">
+                <div class="content">
+                    <img src="/HTML/3.jpg" alt="" class="img">
+                    <h2 class="content-titlt">2019年5月26日</h2>
+                    <p class="content-desc">
+                        这天你翻唱了《撒野》，这是你第一个半露脸视频！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《草芥》">
+                <div class="content">
+                    <img src="/HTML/4.jpg" alt="" class="img">
+                    <h2 class="content-titlt">2019年5月30日</h2>
+                    <p class="content-desc">
+                        这天你发布了《草芥》，这好像是你第一个原唱视频！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《声声慢》">
+                <div class="content">
+                    <img src="/HTML/5.jpg" alt="" class="img">
+                    <h2 class="content-titlt">2019年6月7日</h2>
+                    <p class="content-desc">
+                        这天你第一次翻唱了《声声慢》，"青砖伴瓦漆"开口跪！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《暖暖》">
+                <div class="content">
+                    <img src="/HTML/6.jpg" alt="" class="img">
+                    <h2 class="content-titlt">2020年9月18日</h2>
+                    <p class="content-desc">
+                        这天你翻唱了《暖暖》，"我们都在努力成为更好的自己"！
+                        20年的疫情不好过吧，没事的我们已经挺过来了（露脸了但没完全露）
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《长安姑娘》">
+                <div class="content">
+                    <img src="/HTML/7.jpg" alt="" class="img">
+                    <h2 class="content-titlt">2021年3月16日</h2>
+                    <p class="content-desc">
+                        这天你翻唱了《长安姑娘》，从这个视频开始了半露脸视频！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《又见桃花红》">
+                <div class="content">
+                    <img src="/HTML/8.jpg" alt="" class="img">
+                    <h2 class="content-titlt">2021年3月22日</h2>
+                    <p class="content-desc">
+                        这是你上传音乐平台的第一首原唱单曲《又见桃花红》
+                        恭喜浅浅子，发布第一首单曲！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《相思误》">
+                <div class="content">
+                    <img src="/HTML/9.jpg" alt="" class="img">
+                    <h2 class="content-titlt">2021年4月28日</h2>
+                    <p class="content-desc">
+                        这是你的第二首原唱单曲《相思误》，可喜可贺，你的努力小西瓜们都会看在眼里！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《鸿音》">
+                <div class="content">
+                    <img src="/HTML/10.jpg" alt="" class="img">
+                    <h2 class="content-titlt">2021年6月14日</h2>
+                    <p class="content-desc">
+                        这天你翻唱了《鸿音》，这是你第一个全露脸视频！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《漫步人生路》">
+                <div class="content">
+                    <img src="/HTML/11.jpg" alt="" class="img">
+                    <h2 class="content-titlt">2021年9月06日</h2>
+                    <p class="content-desc">
+                        这天你翻唱了《漫步人生路》，这是你第一次唱粤语歌！
+                        福建人的老大唱粤语也这么厉害！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《你在云山》">
+                <div class="content">
+                    <img src="/HTML/12.jpg" alt="" class="img">
+                    <h2 class="content-titlt">2021年9月23日</h2>
+                    <p class="content-desc">
+                        这天你发布了《你在云山》，这是你的第三首原唱单曲！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《一路生花》">
+                <div class="content">
+                    <img src="/HTML/13.jpg" alt="" class="img">
+                    <h2 class="content-titlt">2021年10月15日</h2>
+                    <p class="content-desc">
+                        这天你翻唱了《一路生花》，"我希望许过的愿望一路生花"
+                        愿我们都能实现梦想，一路生花！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《我的世界没有你了》">
+                <div class="content">
+                    <img src="/HTML/.14jpg" alt="" class="img">
+                    <h2 class="content-titlt">2021年11月25日</h2>
+                    <p class="content-desc">
+
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《春涧》">
+                <div class="content">
+                    <img src="/HTML/15.jpg" alt="" class="img">
+                    <h2 class="content-titlt">2021年11月27日</h2>
+                    <p class="content-desc">
+
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《蓝白》">
+                <div class="content">
+                    <img src="/HTML/16.jpg" alt="" class="img">
+                    <h2 class="content-titlt">2021年12月09日</h2>
+                    <p class="content-desc">
+
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《遇》">
+                <div class="content">
+                    <img src="/HTML/17.jpg" alt="" class="img">
+                    <h2 class="content-titlt">2021年12月15日</h2>
+                    <p class="content-desc">
+
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《风鱼》">
+                <div class="content">
+                    <img src="/HTML/18.jpg" alt="" class="img">
+                    <h2 class="content-titlt">2022年01月28日</h2>
+                    <p class="content-desc">
+
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《好运来》">
+                <div class="content">
+                    <img src="/HTML/好运来.png" alt="" class="img">
+                    <h2 class="content-titlt">2022年02月09日</h2>
+                    <p class="content-desc">
+                        <a
+                            href="https://www.bilibili.com/video/BV17m4y1Z7ZL?vd_source=da75bc6374859730bc30f5b5cf93de8f">《好运来》</a>
+                        大年初九，你发布了新年VLOG视频，恭喜你在过去的一年里涨了八万粉！
+                        恭喜达成成就《小有名气》
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《空杯》">
+                <div class="content">
+                    <img src="/HTML/19.jpg" alt="" class="img">
+                    <h2 class="content-titlt">2022年03月10日</h2>
+                    <p class="content-desc">
+
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《问晴》">
+                <div class="content">
+                    <img src="/HTML/.jpg" alt="" class="img">
+                    <h2 class="content-titlt">2022年03月15日</h2>
+                    <p class="content-desc">
+
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《剑来》">
+                <div class="content">
+                    <img src="/HTML/.jpg" alt="" class="img">
+                    <h2 class="content-titlt">2022年03月19日</h2>
+                    <p class="content-desc">
+
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《戏说因果》">
+                <div class="content">
+                    <img src="/HTML/20.jpg" alt="" class="img">
+                    <h2 class="content-titlt">2022年04月13日</h2>
+                    <p class="content-desc">
+
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《花期》">
+                <div class="content">
+                    <img src="/HTML/21.jpg" alt="" class="img">
+                    <h2 class="content-titlt">2022年04月24日</h2>
+                    <p class="content-desc">
+
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《谪居》">
+                <div class="content">
+                    <img src="/HTML/22.jpg" alt="" class="img">
+                    <h2 class="content-titlt">2022年05月17日</h2>
+                    <p class="content-desc">
+
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《月满西楼》">
+                <div class="content">
+                    <img src="/HTML/23.jpg" alt="" class="img">
+                    <h2 class="content-titlt">2022年07月01日</h2>
+                    <p class="content-desc">
+
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《夜阑风听雨》">
+                <div class="content">
+                    <img src="/HTML/24.jpg" alt="" class="img">
+                    <h2 class="content-titlt">2022年07月06日</h2>
+                    <p class="content-desc">
+
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《探水清河》">
+                <div class="content">
+                    <img src="/HTML/探清水河.png" alt="" class="img">
+                    <h2 class="content-titlt">2022年07月29日</h2>
+                    <p class="content-desc">
+                        <a
+                            href="https://www.bilibili.com/video/BV1sB4y1C7QG?vd_source=da75bc6374859730bc30f5b5cf93de8f">
+                            《BILIBILI校园十佳歌手总决赛》VLOG
+                        </a>
+                        自成一派的浅浅子的第一条vlog，这天你为了准备《BILIBILI校园十佳歌手总决赛》去录制了《探清水河》！
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="item" data-taxt="《声声慢》《画离弦》">
+            <div class="content">
+                <img src="/HTML/声声慢.png" alt="" class="img">
+                <h2 class="content-titlt">202年月日</h2>
+                <p class="content-desc">
+                    <a
+                        href="【2022 B站校园十佳歌手大赛】https://www.bilibili.com/bangumi/play/ep669188?vd_source=da75bc6374859730bc30f5b5cf93de8f">
+                        《声声慢》“青砖伴瓦漆，白马踏新泥”
+                    </a>
+                    <br>
+                    <a
+                        href="【2022 B站校园十佳歌手大赛】https://www.bilibili.com/bangumi/play/ep669183?vd_source=da75bc6374859730bc30f5b5cf93de8f">
+                        《画离弦》“你扶琵琶揍琴弦，我坐戏子楼台前”
+                    </a>
+                    这天你参加了《BILIBILI校园十佳歌手总决赛》，恭喜自成一派的浅浅子荣获第三名！
+                </p>
+            </div>
+        </div>
+        <div class="item" data-taxt="《山海经》">
+            <div class="content">
+                <img src="/HTML/25.jpg" alt="" class="img">
+                <h2 class="content-titlt">2022年08月24日</h2>
+                <p class="content-desc">
+
+                </p>
+            </div>
+        </div>
+        <div class="item" data-taxt="《第一次路演》">
+            <div class="content">
+                <img src="/HTML/第一次路演.png" alt="" class="img">
+                <h2 class="content-titlt">2022年8月26日</h2>
+                <p class="content-desc">
+                    <a
+                        href="【离谱！第一次开线下歌会，粉丝问我是不是小学生？】https://www.bilibili.com/video/BV1i14y187qQ?vd_source=da75bc6374859730bc30f5b5cf93de8f">
+                        《第一次路演》
+                    </a>
+                    这天你成功的完成了一次路演！
+                    <br>
+                    恭喜达成成就《挑战路演》
+                </p>
+            </div>
+        </div>
+        <div class="item" data-taxt="《喜宴》">
+            <div class="content">
+                <img src="/HTML/26.jpg" alt="" class="img">
+                <h2 class="content-titlt">2022年09月01日</h2>
+                <p class="content-desc">
+
+                </p>
+            </div>
+        </div>
+        <div class="item" data-taxt="《假情冢》">
+            <div class="content">
+                <img src="/HTML/27.jpg" alt="" class="img">
+                <h2 class="content-titlt">2022年09月29日</h2>
+                <p class="content-desc">
+
+                </p>
+            </div>
+        </div>
+        <div class="item" data-taxt="《天选》">
+            <div class="content">
+                <img src="/HTML/28.jpg" alt="" class="img">
+                <h2 class="content-titlt">2022年10月09日</h2>
+                <p class="content-desc">
+
+                </p>
+            </div>
+        </div>
+        <div class="item" data-taxt="《满堂彩》">
+            <div class="content">
+                <img src="/HTML/.jpg" alt="" class="img">
+                <h2 class="content-titlt">2022年10月11日</h2>
+                <p class="content-desc">
+
+                </p>
+            </div>
+        </div>
+        <div class="item" data-taxt="《晚星》">
+            <div class="content">
+                <img src="/HTML/.jpg" alt="" class="img">
+                <h2 class="content-titlt">2022年10月21日</h2>
+                <p class="content-desc">
+
+                </p>
+            </div>
+        </div>
+        <div class="item" data-taxt="《长安恋》">
+            <div class="content">
+                <img src="/HTML/.jpg" alt="" class="img">
+                <h2 class="content-titlt">2022年11月04日</h2>
+                <p class="content-desc">
+
+                </p>
+            </div>
+        </div>
+        <div class="item" data-taxt="《船客》">
+            <div class="content">
+                <img src="/HTML/.jpg" alt="" class="img">
+                <h2 class="content-titlt">2022年11月17日</h2>
+                <p class="content-desc">
+
+                </p>
+            </div>
+        </div>
+        <div class="item" data-taxt="《结发谣》">
+            <div class="content">
+                <img src="/HTML/.jpg" alt="" class="img">
+                <h2 class="content-titlt">2023年02月14日</h2>
+                <p class="content-desc">
+
+                </p>
+            </div>
+        </div>
+        <div class="item" data-taxt="《放马川》">
+            <div class="content">
+                <img src="/HTML/.jpg" alt="" class="img">
+                <h2 class="content-titlt">2023年02月22日</h2>
+                <p class="content-desc">
+
+                </p>
+            </div>
+        </div>
+        <div class="item" data-taxt="《梦里望》">
+            <div class="content">
+                <img src="/HTML/.jpg" alt="" class="img">
+                <h2 class="content-titlt">202年月日</h2>
+                <p class="content-desc">
+
+                </p>
+            </div>
+        </div>
+        <div class="item" data-taxt="《情字最大》">
+            <div class="content">
+                <img src="/HTML/.jpg" alt="" class="img">
+                <h2 class="content-titlt">2023年03月18日</h2>
+                <p class="content-desc">
+
+                </p>
+            </div>
+        </div>
+        <div class="item" data-taxt="《闻君》">
+            <div class="content">
+                <img src="/HTML/.jpg" alt="" class="img">
+                <h2 class="content-titlt">2023年03月23日</h2>
+                <p class="content-desc">
+
+                </p>
+            </div>
+        </div>
+        <div class="item" data-taxt="《烟火手记》">
+            <div class="content">
+                <img src="/HTML/.jpg" alt="" class="img">
+                <h2 class="content-titlt">2023年05月20日</h2>
+                <p class="content-desc">
+
+                </p>
+            </div>
+        </div>
+        <div class="item" data-taxt="《惊鸿现》">
+            <div class="content">
+                <img src="/HTML/.jpg" alt="" class="img">
+                <h2 class="content-titlt">2023年05月25日</h2>
+                <p class="content-desc">
+
+                </p>
+            </div>
+        </div>
+        <div class="item" data-taxt="《借风》">
+            <div class="content">
+                <img src="/HTML/.jpg" alt="" class="img">
+                <h2 class="content-titlt">2023年05月31日</h2>
+                <p class="content-desc">
+
+                </p>
+            </div>
+        </div>
+        <div class="item" data-taxt="《小城烟火；伶人笑》">
+            <div class="content">
+                <img src="/HTML/.jpg" alt="" class="img">
+                <h2 class="content-titlt">2023年07月20日</h2>
+                <p class="content-desc">
+
+                </p>
+            </div>
+        </div>
+        <div class="item" data-taxt="《细柳骑白马》">
+            <div class="content">
+                <img src="/HTML/.jpg" alt="" class="img">
+                <h2 class="content-titlt">2023年09月01日</h2>
+                <p class="content-desc">
+
+                </p>
+            </div>
+        </div>
+        <div class="item" data-taxt="《夜风说梦话》">
+            <div class="content">
+                <img src="/HTML/.jpg" alt="" class="img">
+                <h2 class="content-titlt">2023年09月06日</h2>
+                <p class="content-desc">
+
+                </p>
+            </div>
+        </div>
+        <div class="item" data-taxt="《四方谣》">
+            <div class="content">
+                <img src="/HTML/.jpg" alt="" class="img">
+                <h2 class="content-titlt">2023年09月12日</h2>
+                <p class="content-desc">
+
+                </p>
+            </div>
+        </div>
+        <div class="item" data-taxt="《探故知》">
+            <div class="content">
+                <img src="/HTML/.jpg" alt="" class="img">
+                <h2 class="content-titlt">2023年10月19日</h2>
+                <p class="content-desc">
+
+                </p>
+            </div>
+        </div>
+        <div class="item" data-taxt="《城外小月亮》">
+            <div class="content">
+                <img src="/HTML/.jpg" alt="" class="img">
+                <h2 class="content-titlt">2023年10月25日</h2>
+                <p class="content-desc">
+
+                </p>
+            </div>
+        </div>
+        <div class="item" data-taxt="《》">
+            <div class="content">
+                <img src="/HTML/.jpg" alt="" class="img">
+                <h2 class="content-titlt">202年月日</h2>
+                <p class="content-desc">
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="dibu" id="dibu">
+        <h5 class="dizhi">
+            <p>
+                "这不是终点，只是前进路上的起点"
+            </p>
+        </h5>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        (function ($) {
+            $.fn.timeline = function () {
+                var selectors = {
+                    id: $(this),
+                    item: $(this).find(".item"),
+                    activeClass: "item--active",
+                    img: ".img"
+                };
+                selectors.item.eq(0).addClass(selectors.activeClass);
+                selectors.id.css(
+                    "background-image",
+                    "url(" +
+                    selectors.item.first()
+                        .find(selectors.img)
+                        .attr("src") +
+                    ")"
+                );
+                var itemlength = selectors.item.length;
+                $(window).scroll(function () {
+                    var max, min;
+                    var pos = $(this).scrollTop();
+                    selectors.item.each(function (i) {
+                        min = $(this).offset().top;
+                        max = $(this).height() + $(this).offset().top;
+                        var that = $(this);
+                        if (i == itemlength - 2 && pos > min + $(this).height() / 2) {
+                            selectors.item.removeClass(selectors.activeClass);
+                            selectors.id.css(
+                                "background-image",
+                                "url(" +
+                                selectors.item.last()
+                                    .find(selectors.img)
+                                    .attr("src") +
+                                ")"
+                            );
+                            selectors.item.last().addClass(selectors.activeClass);
+                        }
+                        else if (pos <= max - 10 && pos >= min) {
+                            selectors.id.css(
+                                "background-image",
+                                "url(" +
+                                $(this)
+                                    .find(selectors.img)
+                                    .attr("src") +
+                                ")"
+                            );
+                            selectors.item.removeClass(selectors.activeClass);
+                            $(this).addClass(selectors.activeClass);
+                        }
+                    });
+
+                    // 底部突出显示效果
+                    var windowHeight = $(window).height();
+                    var documentHeight = $(document).height();
+                    var scrollTop = $(window).scrollTop();
+
+                    // 当滚动到页面底部附近时，添加highlight类
+                    if (scrollTop + windowHeight >= documentHeight - 100) {
+                        $("#dibu").addClass("highlight");
+                    } else {
+                        $("#dibu").removeClass("highlight");
+                    }
+                });
+            };
+        })(jQuery);
+        $("#shell").timeline();
+    </script>
+</body>
+
+</html>
