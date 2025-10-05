@@ -254,6 +254,90 @@
         .content-desc {
             font-family: 楷体;
         }
+
+        .dibu {
+            width: 90%;
+            max-width: 600px;
+            min-height: 120px;
+            background: rgb(133, 143, 210);
+            opacity: 100%;
+            margin: 0 auto;
+            transition: all 0.5s ease;
+            position: relative;
+            z-index: 10;
+            border-radius: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 30px;
+            box-sizing: border-box;
+        }
+
+        .dibu-content {
+            width: 100%;
+            text-align: center;
+        }
+
+        .dizhi {
+            font-family: 楷体;
+            font-size: clamp(20px, 5vw, 35px);
+            color: black;
+            opacity: 100%;
+            margin: 0;
+            line-height: 1.4;
+            word-break: break-word;
+            padding: 10px;
+        }
+
+        .dibu.highlight {
+            background: linear-gradient(135deg, rgb(133, 143, 210) 0%, rgb(173, 183, 240) 100%);
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
+            transform: translateY(0);
+            animation: pulse 2s infinite;
+            border-top: 3px solid rgba(255, 255, 255, 0.7);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+            }
+
+            100% {
+                box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .dibu {
+                width: 95%;
+                border-radius: 40px;
+                min-height: 100px;
+                padding: 15px 20px;
+            }
+
+            .dizhi {
+                font-size: clamp(18px, 4.5vw, 28px);
+                line-height: 1.3;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .dibu {
+                width: 98%;
+                border-radius: 30px;
+                min-height: 80px;
+                padding: 10px 15px;
+            }
+
+            .dizhi {
+                font-size: clamp(16px, 4vw, 24px);
+                line-height: 1.2;
+            }
+        }
     </style>
 </head>
 
@@ -388,46 +472,48 @@
             </div>
             <div class="item" data-taxt="《我的世界没有你了》">
                 <div class="content">
-                    <img src="/HTML/.14jpg" alt="" class="img">
+                    <img src="/HTML/我的世界没有你了.png" alt="" class="img">
                     <h2 class="content-titlt">2021年11月25日</h2>
                     <p class="content-desc">
-
+                        这是你的第四首原唱单曲！
                     </p>
                 </div>
             </div>
             <div class="item" data-taxt="《春涧》">
                 <div class="content">
-                    <img src="/HTML/15.jpg" alt="" class="img">
+                    <img src="/HTML/春涧.png" alt="" class="img">
                     <h2 class="content-titlt">2021年11月27日</h2>
                     <p class="content-desc">
-
+                        这是你的第五首原唱单曲！
                     </p>
                 </div>
             </div>
             <div class="item" data-taxt="《蓝白》">
                 <div class="content">
-                    <img src="/HTML/16.jpg" alt="" class="img">
+                    <img src="/HTML/蓝白.png" alt="" class="img">
                     <h2 class="content-titlt">2021年12月09日</h2>
                     <p class="content-desc">
-
+                        这是你的第六首原唱单曲！
                     </p>
                 </div>
             </div>
             <div class="item" data-taxt="《遇》">
                 <div class="content">
-                    <img src="/HTML/17.jpg" alt="" class="img">
+                    <img src="/HTML/遇.png" alt="" class="img">
                     <h2 class="content-titlt">2021年12月15日</h2>
                     <p class="content-desc">
-
+                        这是你的第七首原唱单曲！
                     </p>
                 </div>
             </div>
             <div class="item" data-taxt="《风鱼》">
                 <div class="content">
-                    <img src="/HTML/18.jpg" alt="" class="img">
+                    <img src="/HTML/风鱼.png" alt="" class="img">
                     <h2 class="content-titlt">2022年01月28日</h2>
                     <p class="content-desc">
-
+                        这是你的第八首原唱单曲！<br>
+                        21年你一共发布了7首原唱单曲！<br>
+                        恭喜获得成就《劳模影》！
                     </p>
                 </div>
             </div>
@@ -445,73 +531,73 @@
             </div>
             <div class="item" data-taxt="《空杯》">
                 <div class="content">
-                    <img src="/HTML/19.jpg" alt="" class="img">
+                    <img src="/HTML/空杯.png" alt="" class="img">
                     <h2 class="content-titlt">2022年03月10日</h2>
                     <p class="content-desc">
-
+                        这是你的第九首原唱单曲！
                     </p>
                 </div>
             </div>
             <div class="item" data-taxt="《问晴》">
                 <div class="content">
-                    <img src="/HTML/.jpg" alt="" class="img">
+                    <img src="/HTML/问晴.png" alt="" class="img">
                     <h2 class="content-titlt">2022年03月15日</h2>
                     <p class="content-desc">
-
+                        这是你的第十首原唱单曲！
                     </p>
                 </div>
             </div>
             <div class="item" data-taxt="《剑来》">
                 <div class="content">
-                    <img src="/HTML/.jpg" alt="" class="img">
+                    <img src="/HTML/剑来.png" alt="" class="img">
                     <h2 class="content-titlt">2022年03月19日</h2>
                     <p class="content-desc">
-
+                        这是你的第十一首原唱单曲！
                     </p>
                 </div>
             </div>
             <div class="item" data-taxt="《戏说因果》">
                 <div class="content">
-                    <img src="/HTML/20.jpg" alt="" class="img">
+                    <img src="/HTML/戏说因果.png" alt="" class="img">
                     <h2 class="content-titlt">2022年04月13日</h2>
                     <p class="content-desc">
-
+                        这是你的第十二首原唱单曲！
                     </p>
                 </div>
             </div>
             <div class="item" data-taxt="《花期》">
                 <div class="content">
-                    <img src="/HTML/21.jpg" alt="" class="img">
+                    <img src="/HTML/花期.png" alt="" class="img">
                     <h2 class="content-titlt">2022年04月24日</h2>
                     <p class="content-desc">
-
+                        这是你的第十三首原唱单曲！
                     </p>
                 </div>
             </div>
             <div class="item" data-taxt="《谪居》">
                 <div class="content">
-                    <img src="/HTML/22.jpg" alt="" class="img">
+                    <img src="/HTML/谪居.png" alt="" class="img">
                     <h2 class="content-titlt">2022年05月17日</h2>
                     <p class="content-desc">
-
+                        这是你的第十四首原唱单曲！
                     </p>
                 </div>
             </div>
             <div class="item" data-taxt="《月满西楼》">
                 <div class="content">
-                    <img src="/HTML/23.jpg" alt="" class="img">
+                    <img src="/HTML/月满西楼.png" alt="" class="img">
                     <h2 class="content-titlt">2022年07月01日</h2>
                     <p class="content-desc">
-
+                        这是你的第十五首原唱单曲！
                     </p>
                 </div>
             </div>
             <div class="item" data-taxt="《夜阑风听雨》">
                 <div class="content">
-                    <img src="/HTML/24.jpg" alt="" class="img">
+                    <img src="/HTML/夜阑听风雨.png" alt="" class="img">
                     <h2 class="content-titlt">2022年07月06日</h2>
                     <p class="content-desc">
-
+                        这是你的第十六首原唱单曲！
                     </p>
                 </div>
             </div>
@@ -528,324 +614,388 @@
                     </p>
                 </div>
             </div>
-        </div>
-        <div class="item" data-taxt="《声声慢》《画离弦》">
-            <div class="content">
-                <img src="/HTML/声声慢.png" alt="" class="img">
-                <h2 class="content-titlt">202年月日</h2>
-                <p class="content-desc">
-                    <a
-                        href="【2022 B站校园十佳歌手大赛】https://www.bilibili.com/bangumi/play/ep669188?vd_source=da75bc6374859730bc30f5b5cf93de8f">
-                        《声声慢》“青砖伴瓦漆，白马踏新泥”
-                    </a>
-                    <br>
-                    <a
-                        href="【2022 B站校园十佳歌手大赛】https://www.bilibili.com/bangumi/play/ep669183?vd_source=da75bc6374859730bc30f5b5cf93de8f">
-                        《画离弦》“你扶琵琶揍琴弦，我坐戏子楼台前”
-                    </a>
-                    这天你参加了《BILIBILI校园十佳歌手总决赛》，恭喜自成一派的浅浅子荣获第三名！
-                </p>
+            <div class="item" data-taxt="《声声慢》《画离弦》">
+                <div class="content">
+                    <img src="/HTML/声声慢.png" alt="" class="img">
+                    <h2 class="content-titlt">202年月日</h2>
+                    <p class="content-desc">
+                        <a
+                            href="【2022 B站校园十佳歌手大赛】https://www.bilibili.com/bangumi/play/ep669188?vd_source=da75bc6374859730bc30f5b5cf93de8f">
+                            《声声慢》“青砖伴瓦漆，白马踏新泥”
+                        </a>
+                        <br>
+                        <a
+                            href="【2022 B站校园十佳歌手大赛】https://www.bilibili.com/bangumi/play/ep669183?vd_source=da75bc6374859730bc30f5b5cf93de8f">
+                            《画离弦》“你扶琵琶揍琴弦，我坐戏子楼台前”
+                        </a>
+                        这天你参加了《BILIBILI校园十佳歌手总决赛》，恭喜自成一派的浅浅子荣获第三名！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《山海经》">
+                <div class="content">
+                    <img src="/HTML/山海经.png" alt="" class="img">
+                    <h2 class="content-titlt">2022年08月24日</h2>
+                    <p class="content-desc">
+                        这是你的第十七首原唱单曲！
+                        （你问2025寻影现场被抽中唱山海经的是谁？那肯定是咱们的三海栖，<a
+                            href="5.84 08/30 wfB:/ o@q.Rk 20250823浅影个人专场《山海经》（但栖栖版） 他是全场唯一一个触碰到话筒并放声歌唱的粉丝 # 浅影阿 # 山海经 # 寻影2025浅影个人音乐会  https://v.douyin.com/WHXbfkmGTTA/ 复制此链接，打开Dou音搜索，直接观看视频！">
+                            栖栖
+                        </a>
+                        ）
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《第一次路演》">
+                <div class="content">
+                    <img src="/HTML/第一次路演.png" alt="" class="img">
+                    <h2 class="content-titlt">2022年8月26日</h2>
+                    <p class="content-desc">
+                        <a
+                            href="【离谱！第一次开线下歌会，粉丝问我是不是小学生？】https://www.bilibili.com/video/BV1i14y187qQ?vd_source=da75bc6374859730bc30f5b5cf93de8f">
+                            《第一次路演》
+                        </a>
+                        这天你成功的完成了一次路演！
+                        恭喜达成成就《挑战路演》
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《喜宴》">
+                <div class="content">
+                    <img src="/HTML/喜宴.png" alt="" class="img">
+                    <h2 class="content-titlt">2022年09月01日</h2>
+                    <p class="content-desc">
+                        这是你的第十八首原唱单曲！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《假情冢》">
+                <div class="content">
+                    <img src="/HTML/假情冢.png" alt="" class="img">
+                    <h2 class="content-titlt">2022年09月29日</h2>
+                    <p class="content-desc">
+                        这是你的第十九首原唱单曲！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《天选》">
+                <div class="content">
+                    <img src="/HTML/天选.png" alt="" class="img">
+                    <h2 class="content-titlt">2022年10月09日</h2>
+                    <p class="content-desc">
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《满堂彩》">
+                <div class="content">
+                    <img src="/HTML/满堂彩.png" alt="" class="img">
+                    <h2 class="content-titlt">2022年10月11日</h2>
+                    <p class="content-desc">
+                        这是你的第二十首原唱单曲！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《晚星》">
+                <div class="content">
+                    <img src="/HTML/晚星.png" alt="" class="img">
+                    <h2 class="content-titlt">2022年10月21日</h2>
+                    <p class="content-desc">
+                        这是你的第二十一首原唱单曲！还是粤语歌！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《长安恋》">
+                <div class="content">
+                    <img src="/HTML/长安恋.png" alt="" class="img">
+                    <h2 class="content-titlt">2022年11月04日</h2>
+                    <p class="content-desc">
+                        “世人说我恋长安，其实只恋长安某”<br>
+                        因一人爱一城，希望我们都能找到那个她！
+                        这是你的第二十二首原唱单曲！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《船客》">
+                <div class="content">
+                    <img src="/HTML/船客.png" alt="" class="img">
+                    <h2 class="content-titlt">2022年11月17日</h2>
+                    <p class="content-desc">
+                        这是你的第二十三首原唱单曲！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《小破站90万粉特别节目》">
+                <div class="content">
+                    <img src="/HTML/90万粉特别节目.png" alt="" class="img">
+                    <h2 class="content-titlt">2023年01月04日</h2>
+                    <p class="content-desc">
+                        恭喜浅浅子，在两年的时间小破站收获了90万粉！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《结发谣》">
+                <div class="content">
+                    <img src="/HTML/结发谣.png" alt="" class="img">
+                    <h2 class="content-titlt">2023年02月14日</h2>
+                    <p class="content-desc">
+                        这是你的第二十四首原唱单曲！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《放马川》">
+                <div class="content">
+                    <img src="/HTML/放马川.png" alt="" class="img">
+                    <h2 class="content-titlt">2023年02月22日</h2>
+                    <p class="content-desc">
+                        这是你的第二十五首原唱单曲！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《梦里望》">
+                <div class="content">
+                    <img src="/HTML/梦里望.png" alt="" class="img">
+                    <h2 class="content-titlt">202年月日</h2>
+                    <p class="content-desc">
+                        这是你的第二十六首原唱单曲！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《情字最大》">
+                <div class="content">
+                    <img src="/HTML/情字最大.png" alt="" class="img">
+                    <h2 class="content-titlt">2023年03月18日</h2>
+                    <p class="content-desc">
+                        “清风白昼，翻过了九州”<br>
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《闻君》">
+                <div class="content">
+                    <img src="/HTML/闻君.png" alt="" class="img">
+                    <h2 class="content-titlt">2023年03月23日</h2>
+                    <p class="content-desc">
+                        这是你的第二十七首原唱单曲！<br>
+                        恭喜浅浅子，今天是你小破站粉丝突破100w！<br>
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《烟火手记》">
+                <div class="content">
+                    <img src="/HTML/烟火手记.png" alt="" class="img">
+                    <h2 class="content-titlt">2023年05月20日</h2>
+                    <p class="content-desc">
+                        这是你的第二十八首原唱单曲！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《惊鸿现》">
+                <div class="content">
+                    <img src="/HTML/惊鸿现.png" alt="" class="img">
+                    <h2 class="content-titlt">2023年05月25日</h2>
+                    <p class="content-desc">
+                        这是你的第二十九首原唱单曲！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《借风》">
+                <div class="content">
+                    <img src="/HTML/借风.png" alt="" class="img">
+                    <h2 class="content-titlt">2023年05月31日</h2>
+                    <p class="content-desc">
+                        这是你的第三十首原唱单曲！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《凤凰花开的路口》">
+                <div class="content">
+                    <img src="/HTML/凤凰花开的路口.png" alt="" class="img">
+                    <h2 class="content-titlt">2023年06月11日</h2>
+                    <p class="content-desc">
+                        “脑海之中有一个凤凰花开的路口，有我最珍惜的朋友”<br>
+                        你与九三合唱了<a
+                            href="【《凤凰花开的路口》毕业不是结束，而是新的开始！】https://www.bilibili.com/video/BV1tj411Q7r8?vd_source=da75bc6374859730bc30f5b5cf93de8f">
+                            《凤凰花开的路口》</a>
+                        ，收获了117万的浏览量！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《小城烟火；伶人笑》">
+                <div class="content">
+                    <img src="/HTML/小城烟火.png" alt="" class="img">
+                    <h2 class="content-titlt">2023年07月20日</h2>
+                    <p class="content-desc">
+                        这天你同时发布了两首原唱单曲，被小西瓜们称为“世界浅影日”
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《细柳骑白马》">
+                <div class="content">
+                    <img src="/HTML/细柳骑白马.png" alt="" class="img">
+                    <h2 class="content-titlt">2023年09月01日</h2>
+                    <p class="content-desc">
+                        这是你的第三十三首原唱单曲！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《夜风说梦话》">
+                <div class="content">
+                    <img src="/HTML/夜风说梦话.png" alt="" class="img">
+                    <h2 class="content-titlt">2023年09月06日</h2>
+                    <p class="content-desc">
+                        这是你的第三十四首原唱单曲！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《四方谣》">
+                <div class="content">
+                    <img src="/HTML/四方谣.png" alt="" class="img">
+                    <h2 class="content-titlt">2023年09月12日</h2>
+                    <p class="content-desc">
+                        这是你的第三十五首原唱单曲！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《登场》">
+                <div class="content">
+                    <img src="/HTML/登场.png" alt="" class="img">
+                    <h2 class="content-titlt">2023年09月23日</h2>
+                    <p class="content-desc">
+                        “如果生活变得匆忙只能遥望远方”<a
+                            href="【【九三X浅影】合唱《登场》，那一定很难！ 也一定很酷！】https://www.bilibili.com/video/BV1Tu4y167Ri?vd_source=da75bc6374859730bc30f5b5cf93de8f">
+                        </a>
+                        这是与九三的第二次单独合作！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《探故知》">
+                <div class="content">
+                    <img src="/HTML/探故知.png" alt="" class="img">
+                    <h2 class="content-titlt">2023年10月19日</h2>
+                    <p class="content-desc">
+                        这是你的第三十六首原唱单曲！<br>
+                        某Q音乐收藏260w，恭喜恭喜！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《城外小月亮》">
+                <div class="content">
+                    <img src="/HTML/城外小月亮.png" alt="" class="img">
+                    <h2 class="content-titlt">2023年10月25日</h2>
+                    <p class="content-desc">
+                        这是你的第三十七首原唱单曲！
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《霜雪千年》">
+                <div class="content">
+                    <img src="/HTML/霜雪千年.png" alt="" class="img">
+                    <h2 class="content-titlt">2024年01月07日</h2>
+                    <p class="content-desc">
+                        <a
+                            href="【浅影阿 |小D-biu 梦幻联动：全新演绎绝美古风神曲《霜雪千年》】https://www.bilibili.com/video/BV1LQ4y177UZ?vd_source=da75bc6374859730bc30f5b5cf93de8f">
+                            《霜雪千年》
+                        </a>
+                        恭喜浅浅子，达成成就《百大up主》
+                        <a
+                            href="【浅影阿_ BILIBILI POWER UP 2023百大UP主盛典 颁奖片段】https://www.bilibili.com/video/BV1xK411x7ih?vd_source=da75bc6374859730bc30f5b5cf93de8f">
+                            2023年百大up主盛典
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <div class="item" data-taxt="《新年送祝福》">
+                <div class="content">
+                    <img src="/HTML/新年送祝福.png" alt="" class="img">
+                    <h2 class="content-titlt">2024年02月06日</h2>
+                    <p class="content-desc">
+                        <a
+                            href="【新年快乐！一首原创送给大家！！】https://www.bilibili.com/video/BV18u4m1K76G?vd_source=da75bc6374859730bc30f5b5cf93de8f">
+                            新年快乐
+                        </a>
+                        “新年第一句，先讲声恭喜恭喜”祝老大早日实现梦想<br>
+                        “无功受禄、不劳而获、坐享其成、一步登天！”
+                    </p>
+                </div>
             </div>
         </div>
-        <div class="item" data-taxt="《山海经》">
-            <div class="content">
-                <img src="/HTML/25.jpg" alt="" class="img">
-                <h2 class="content-titlt">2022年08月24日</h2>
-                <p class="content-desc">
+        <div class="dibu" id="dibu">
+            <div class="dibu-content">
+                <h5 class="dizhi">
+                    <p>
+                        "这不是终点，只是前进路上的起点"
+                    </p>
+                </h5>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script>
+            (function ($) {
+                $.fn.timeline = function () {
+                    var selectors = {
+                        id: $(this),
+                        item: $(this).find(".item"),
+                        activeClass: "item--active",
+                        img: ".img"
+                    };
+                    selectors.item.eq(0).addClass(selectors.activeClass);
+                    selectors.id.css(
+                        "background-image",
+                        "url(" +
+                        selectors.item.first()
+                            .find(selectors.img)
+                            .attr("src") +
+                        ")"
+                    );
+                    var itemlength = selectors.item.length;
+                    $(window).scroll(function () {
+                        var max, min;
+                        var pos = $(this).scrollTop();
+                        selectors.item.each(function (i) {
+                            min = $(this).offset().top;
+                            max = $(this).height() + $(this).offset().top;
+                            var that = $(this);
+                            if (i == itemlength - 2 && pos > min + $(this).height() / 2) {
+                                selectors.item.removeClass(selectors.activeClass);
+                                selectors.id.css(
+                                    "background-image",
+                                    "url(" +
+                                    selectors.item.last()
+                                        .find(selectors.img)
+                                        .attr("src") +
+                                    ")"
+                                );
+                                selectors.item.last().addClass(selectors.activeClass);
+                            }
+                            else if (pos <= max - 10 && pos >= min) {
+                                selectors.id.css(
+                                    "background-image",
+                                    "url(" +
+                                    $(this)
+                                        .find(selectors.img)
+                                        .attr("src") +
+                                    ")"
+                                );
+                                selectors.item.removeClass(selectors.activeClass);
+                                $(this).addClass(selectors.activeClass);
+                            }
+                        });
 
-                </p>
-            </div>
-        </div>
-        <div class="item" data-taxt="《第一次路演》">
-            <div class="content">
-                <img src="/HTML/第一次路演.png" alt="" class="img">
-                <h2 class="content-titlt">2022年8月26日</h2>
-                <p class="content-desc">
-                    <a
-                        href="【离谱！第一次开线下歌会，粉丝问我是不是小学生？】https://www.bilibili.com/video/BV1i14y187qQ?vd_source=da75bc6374859730bc30f5b5cf93de8f">
-                        《第一次路演》
-                    </a>
-                    这天你成功的完成了一次路演！
-                    <br>
-                    恭喜达成成就《挑战路演》
-                </p>
-            </div>
-        </div>
-        <div class="item" data-taxt="《喜宴》">
-            <div class="content">
-                <img src="/HTML/26.jpg" alt="" class="img">
-                <h2 class="content-titlt">2022年09月01日</h2>
-                <p class="content-desc">
+                        // 底部突出显示效果
+                        var windowHeight = $(window).height();
+                        var documentHeight = $(document).height();
+                        var scrollTop = $(window).scrollTop();
 
-                </p>
-            </div>
-        </div>
-        <div class="item" data-taxt="《假情冢》">
-            <div class="content">
-                <img src="/HTML/27.jpg" alt="" class="img">
-                <h2 class="content-titlt">2022年09月29日</h2>
-                <p class="content-desc">
-
-                </p>
-            </div>
-        </div>
-        <div class="item" data-taxt="《天选》">
-            <div class="content">
-                <img src="/HTML/28.jpg" alt="" class="img">
-                <h2 class="content-titlt">2022年10月09日</h2>
-                <p class="content-desc">
-
-                </p>
-            </div>
-        </div>
-        <div class="item" data-taxt="《满堂彩》">
-            <div class="content">
-                <img src="/HTML/.jpg" alt="" class="img">
-                <h2 class="content-titlt">2022年10月11日</h2>
-                <p class="content-desc">
-
-                </p>
-            </div>
-        </div>
-        <div class="item" data-taxt="《晚星》">
-            <div class="content">
-                <img src="/HTML/.jpg" alt="" class="img">
-                <h2 class="content-titlt">2022年10月21日</h2>
-                <p class="content-desc">
-
-                </p>
-            </div>
-        </div>
-        <div class="item" data-taxt="《长安恋》">
-            <div class="content">
-                <img src="/HTML/.jpg" alt="" class="img">
-                <h2 class="content-titlt">2022年11月04日</h2>
-                <p class="content-desc">
-
-                </p>
-            </div>
-        </div>
-        <div class="item" data-taxt="《船客》">
-            <div class="content">
-                <img src="/HTML/.jpg" alt="" class="img">
-                <h2 class="content-titlt">2022年11月17日</h2>
-                <p class="content-desc">
-
-                </p>
-            </div>
-        </div>
-        <div class="item" data-taxt="《结发谣》">
-            <div class="content">
-                <img src="/HTML/.jpg" alt="" class="img">
-                <h2 class="content-titlt">2023年02月14日</h2>
-                <p class="content-desc">
-
-                </p>
-            </div>
-        </div>
-        <div class="item" data-taxt="《放马川》">
-            <div class="content">
-                <img src="/HTML/.jpg" alt="" class="img">
-                <h2 class="content-titlt">2023年02月22日</h2>
-                <p class="content-desc">
-
-                </p>
-            </div>
-        </div>
-        <div class="item" data-taxt="《梦里望》">
-            <div class="content">
-                <img src="/HTML/.jpg" alt="" class="img">
-                <h2 class="content-titlt">202年月日</h2>
-                <p class="content-desc">
-
-                </p>
-            </div>
-        </div>
-        <div class="item" data-taxt="《情字最大》">
-            <div class="content">
-                <img src="/HTML/.jpg" alt="" class="img">
-                <h2 class="content-titlt">2023年03月18日</h2>
-                <p class="content-desc">
-
-                </p>
-            </div>
-        </div>
-        <div class="item" data-taxt="《闻君》">
-            <div class="content">
-                <img src="/HTML/.jpg" alt="" class="img">
-                <h2 class="content-titlt">2023年03月23日</h2>
-                <p class="content-desc">
-
-                </p>
-            </div>
-        </div>
-        <div class="item" data-taxt="《烟火手记》">
-            <div class="content">
-                <img src="/HTML/.jpg" alt="" class="img">
-                <h2 class="content-titlt">2023年05月20日</h2>
-                <p class="content-desc">
-
-                </p>
-            </div>
-        </div>
-        <div class="item" data-taxt="《惊鸿现》">
-            <div class="content">
-                <img src="/HTML/.jpg" alt="" class="img">
-                <h2 class="content-titlt">2023年05月25日</h2>
-                <p class="content-desc">
-
-                </p>
-            </div>
-        </div>
-        <div class="item" data-taxt="《借风》">
-            <div class="content">
-                <img src="/HTML/.jpg" alt="" class="img">
-                <h2 class="content-titlt">2023年05月31日</h2>
-                <p class="content-desc">
-
-                </p>
-            </div>
-        </div>
-        <div class="item" data-taxt="《小城烟火；伶人笑》">
-            <div class="content">
-                <img src="/HTML/.jpg" alt="" class="img">
-                <h2 class="content-titlt">2023年07月20日</h2>
-                <p class="content-desc">
-
-                </p>
-            </div>
-        </div>
-        <div class="item" data-taxt="《细柳骑白马》">
-            <div class="content">
-                <img src="/HTML/.jpg" alt="" class="img">
-                <h2 class="content-titlt">2023年09月01日</h2>
-                <p class="content-desc">
-
-                </p>
-            </div>
-        </div>
-        <div class="item" data-taxt="《夜风说梦话》">
-            <div class="content">
-                <img src="/HTML/.jpg" alt="" class="img">
-                <h2 class="content-titlt">2023年09月06日</h2>
-                <p class="content-desc">
-
-                </p>
-            </div>
-        </div>
-        <div class="item" data-taxt="《四方谣》">
-            <div class="content">
-                <img src="/HTML/.jpg" alt="" class="img">
-                <h2 class="content-titlt">2023年09月12日</h2>
-                <p class="content-desc">
-
-                </p>
-            </div>
-        </div>
-        <div class="item" data-taxt="《探故知》">
-            <div class="content">
-                <img src="/HTML/.jpg" alt="" class="img">
-                <h2 class="content-titlt">2023年10月19日</h2>
-                <p class="content-desc">
-
-                </p>
-            </div>
-        </div>
-        <div class="item" data-taxt="《城外小月亮》">
-            <div class="content">
-                <img src="/HTML/.jpg" alt="" class="img">
-                <h2 class="content-titlt">2023年10月25日</h2>
-                <p class="content-desc">
-
-                </p>
-            </div>
-        </div>
-        <div class="item" data-taxt="《》">
-            <div class="content">
-                <img src="/HTML/.jpg" alt="" class="img">
-                <h2 class="content-titlt">202年月日</h2>
-                <p class="content-desc">
-
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="dibu" id="dibu">
-        <h5 class="dizhi">
-            <p>
-                "这不是终点，只是前进路上的起点"
-            </p>
-        </h5>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script>
-        (function ($) {
-            $.fn.timeline = function () {
-                var selectors = {
-                    id: $(this),
-                    item: $(this).find(".item"),
-                    activeClass: "item--active",
-                    img: ".img"
-                };
-                selectors.item.eq(0).addClass(selectors.activeClass);
-                selectors.id.css(
-                    "background-image",
-                    "url(" +
-                    selectors.item.first()
-                        .find(selectors.img)
-                        .attr("src") +
-                    ")"
-                );
-                var itemlength = selectors.item.length;
-                $(window).scroll(function () {
-                    var max, min;
-                    var pos = $(this).scrollTop();
-                    selectors.item.each(function (i) {
-                        min = $(this).offset().top;
-                        max = $(this).height() + $(this).offset().top;
-                        var that = $(this);
-                        if (i == itemlength - 2 && pos > min + $(this).height() / 2) {
-                            selectors.item.removeClass(selectors.activeClass);
-                            selectors.id.css(
-                                "background-image",
-                                "url(" +
-                                selectors.item.last()
-                                    .find(selectors.img)
-                                    .attr("src") +
-                                ")"
-                            );
-                            selectors.item.last().addClass(selectors.activeClass);
-                        }
-                        else if (pos <= max - 10 && pos >= min) {
-                            selectors.id.css(
-                                "background-image",
-                                "url(" +
-                                $(this)
-                                    .find(selectors.img)
-                                    .attr("src") +
-                                ")"
-                            );
-                            selectors.item.removeClass(selectors.activeClass);
-                            $(this).addClass(selectors.activeClass);
+                        // 当滚动到页面底部附近时，添加highlight类
+                        if (scrollTop + windowHeight >= documentHeight - 100) {
+                            $("#dibu").addClass("highlight");
+                        } else {
+                            $("#dibu").removeClass("highlight");
                         }
                     });
-
-                    // 底部突出显示效果
-                    var windowHeight = $(window).height();
-                    var documentHeight = $(document).height();
-                    var scrollTop = $(window).scrollTop();
-
-                    // 当滚动到页面底部附近时，添加highlight类
-                    if (scrollTop + windowHeight >= documentHeight - 100) {
-                        $("#dibu").addClass("highlight");
-                    } else {
-                        $("#dibu").removeClass("highlight");
-                    }
-                });
-            };
-        })(jQuery);
-        $("#shell").timeline();
-    </script>
+                };
+            })(jQuery);
+            $("#shell").timeline();
+        </script>
 </body>
 
 </html>
