@@ -821,7 +821,7 @@
             </div>
             <div class="item" data-taxt="《小城烟火；伶人笑》">
                 <div class="content">
-                    <img src="/HTML/小城烟火.png" alt="" class="img" loading="lazy" >
+                    <img src="/HTML/小城烟火.png" alt="" class="img" loading="lazy">
                     <h2 class="content-titlt">2023年07月20日</h2>
                     <p class="content-desc">
                         这天你同时发布了两首原唱单曲，被小西瓜们称为“世界浅影日”
@@ -920,7 +920,6 @@
         </div>
         <div class="dibu" id="dibu">
             <div class="dibu-content">
-
                 <h5 class="dizhi">
                     <p>
                         "这不是终点，只是前进路上的起点"
@@ -930,69 +929,69 @@
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script>
-                (function ($) {
-                    $.fn.timeline = function () {
-                        var selectors = {
-                            id: $(this),
-                            item: $(this).find(".item"),
-                            activeClass: "item--active",
-                            img: ".img"
-                        };
-                        selectors.item.eq(0).addClass(selectors.activeClass);
-                        selectors.id.css(
-                            "background-image",
-                            "url(" +
-                            selectors.item.first()
-                                .find(selectors.img)
-                                .attr("src") +
-                            ")"
-                        );
-                        var itemlength = selectors.item.length;
-                        $(window).scroll(function () {
-                            var max, min;
-                            var pos = $(this).scrollTop();
-                            selectors.item.each(function (i) {
-                                min = $(this).offset().top;
-                                max = $(this).height() + $(this).offset().top;
-                                var that = $(this);
-                                if (i == itemlength - 2 && pos > min + $(this).height() / 2) {
-                                    selectors.item.removeClass(selectors.activeClass);
-                                    selectors.id.css(
-                                        "background-image",
-                                        "url(" +
-                                        selectors.item.last()
-                                            .find(selectors.img)
-                                            .attr("src") +
-                                        ")"
-                                    );
-                                    selectors.item.last().addClass(selectors.activeClass);
-                                }
-                                else if (pos <= max - 10 && pos >= min) {
-                                    selectors.id.css(
-                                        "background-image",
-                                        "url(" +
-                                        $(this)
-                                            .find(selectors.img)
-                                            .attr("src") +
-                                        ")"
-                                    );
-                                    selectors.item.removeClass(selectors.activeClass);
-                                    $(this).addClass(selectors.activeClass);
-                                }
-                            });
-
-                            var windowHeight = $(window).height();
-                            var documentHeight = $(document).height();
-                            var scrollTop = $(window).scrollTop();
-
-                            if (scrollTop + windowHeight >= documentHeight - 100) {
-                                $("#dibu").addClass("highlight");
-                            } else {
-                                $("#dibu").removeClass("highlight");
+            (function ($) {
+                $.fn.timeline = function () {
+                    var selectors = {
+                        id: $(this),
+                        item: $(this).find(".item"),
+                        activeClass: "item--active",
+                        img: ".img"
+                    };
+                    selectors.item.eq(0).addClass(selectors.activeClass);
+                    selectors.id.css(
+                        "background-image",
+                        "url(" +
+                        selectors.item.first()
+                            .find(selectors.img)
+                            .attr("src") +
+                        ")"
+                    );
+                    var itemlength = selectors.item.length;
+                    $(window).scroll(function () {
+                        var max, min;
+                        var pos = $(this).scrollTop();
+                        selectors.item.each(function (i) {
+                            min = $(this).offset().top;
+                            max = $(this).height() + $(this).offset().top;
+                            var that = $(this);
+                            if (i == itemlength - 2 && pos > min + $(this).height() / 2) {
+                                selectors.item.removeClass(selectors.activeClass);
+                                selectors.id.css(
+                                    "background-image",
+                                    "url(" +
+                                    selectors.item.last()
+                                        .find(selectors.img)
+                                        .attr("src") +
+                                    ")"
+                                );
+                                selectors.item.last().addClass(selectors.activeClass);
+                            }
+                            else if (pos <= max - 10 && pos >= min) {
+                                selectors.id.css(
+                                    "background-image",
+                                    "url(" +
+                                    $(this)
+                                        .find(selectors.img)
+                                        .attr("src") +
+                                    ")"
+                                );
+                                selectors.item.removeClass(selectors.activeClass);
+                                $(this).addClass(selectors.activeClass);
                             }
                         });
-                    };
-                })(jQuery);
+
+                        var windowHeight = $(window).height();
+                        var documentHeight = $(document).height();
+                        var scrollTop = $(window).scrollTop();
+
+                        if (scrollTop + windowHeight >= documentHeight - 100) {
+                            $("#dibu").addClass("highlight");
+                        } else {
+                            $("#dibu").removeClass("highlight");
+                        }
+                    });
+                };
+            })(jQuery);
             $("#shell").timeline();
         </script>
 </body>
